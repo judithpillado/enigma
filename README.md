@@ -8,11 +8,11 @@ Additionally, our algorithm will use the standard lowercase alphabet, plus a spa
 ```
 ("a".."z").to_a << " "
 ```
-###Finding the Shifts
+### Finding the Shifts
 
 Each shift will be the sum of two other shifts known as the Keys and the Offsets. So the A shift will be the A key plus the A offset, the B shift will be the B key plus the B offset, etc.
 
-####The Keys
+#### The Keys
 
 The keys are created by generating a random five digit number, like 02715, and splitting it up like so:
 
@@ -21,7 +21,7 @@ The keys are created by generating a random five digit number, like 02715, and s
 - C key: third and fourth digits (71)
 - D key: fourth and fifth digits (15)
 
-####The Offsets
+#### The Offsets
 
 The offsets are found using the date of transmission.
 
@@ -33,7 +33,7 @@ The offsets are found using the date of transmission.
 - C offset: The third digit (2)
 - D offset: The fourth digit (5)
 
-###Encrypting a Message
+### Encrypting a Message
 
 Let’s say we are trying to encrypt the message `"hello world".`
 
@@ -62,13 +62,13 @@ The final translation for this example would be:
 
 “hello world” => “keder ohulw”
 
-####Other notes on Encryption
+#### Other notes on Encryption
 - You should be able to generate random numbers with leading zeros. In the example shown, the random number was 2715, so it should be zero padded to make it a five digit number (02715)
 - Your translation should only translate using lowercase letters. If a letter is uppercase, it should use the lowercase translation, so in the example above, “HELLO WORLD” would still translate to “keder ohulw”
 - If you encounter a character not in the character set, it should be translated as itself. Using the example above, “hello world!” should be translated as “keder ohulw!”
 
-####Decrypting a Message
+#### Decrypting a Message
 In order to decrypt a message, we need to know the key and date that were used for encryption. We can find the total shifts using the same methods as above. Then each character is shifted backwards instead of forwards.
 
-####Cracking a Key
+#### Cracking a Key
 When the key is not known, we can crack the encryption using just the date of transmission. We believe that each enemy message ends with the characters " end". Use this to crack the encryption.
