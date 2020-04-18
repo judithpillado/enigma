@@ -71,4 +71,4 @@ The final translation for this example would be:
 In order to decrypt a message, we need to know the key and date that were used for encryption. We can find the total shifts using the same methods as above. Then each character is shifted backwards instead of forwards.
 
 #### Cracking a Key
-When the key is not known, we can crack the encryption using just the date of transmission. We believe that each enemy message ends with the characters " end". Use this to crack the encryption.
+When the key is not known, we can crack the encryption using just the date of transmission. We believe that each enemy message ends with the characters `" end"`. Use this to crack the encryption.
