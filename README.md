@@ -45,9 +45,11 @@ C: 73
 D: 20
 ```
 Our character set is the alphabet and a space like this:
+
 ```
 ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", " "]
 ```
+
 If we are trying to encrypt “hello world”, the first character (“h”) is shifted by the A shift (3). So “h” becomes “k”.
 
 The second character (“e”) is shifted by the B shift (27). Since there are 27 characters in our set, shifting by 27 gets us back to where we started, so “e” becomes “e”.
