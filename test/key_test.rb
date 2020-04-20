@@ -15,4 +15,8 @@ class KeyTest < Minitest::Test
     assert_equal 5, @key.randomize_numbers.length
   end
 
+  def test_it_generates_keys
+   assert_equal 4, @key.generate_keys.length
+  end
+
 end
