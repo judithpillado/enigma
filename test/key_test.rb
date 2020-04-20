@@ -19,4 +19,8 @@ class KeyTest < Minitest::Test
    assert_equal 4, @key.generate_keys.length
   end
 
+  def test_it_assigns_keys
+    assert_instance_of Hash, @key.assign_keys
+  end
+   
 end
