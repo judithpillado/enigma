@@ -1,10 +1,10 @@
-require 'date'
+require 'time'
 
 class Offset
   attr_reader :date
 
   def initialize
-    @date = Time.now.strftime("%m%d%y")
+    @date = Time.now.strftime("%d%m%y")
   end
 
   def squared_date
