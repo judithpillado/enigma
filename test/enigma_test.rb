@@ -28,4 +28,10 @@ class EnigmaTest < Minitest::Test
     assert_equal expected, @enigma.decrypt("keder ohulw", "02715", "040895")
   end
 
+  def test_it_can_encrypt_without_date
+    date = Time.now.strftime("%d%m%y")
+    expected = {encryption: "pib wdmczpu", key: "02715", date: date}
+    assert_equal expected, @enigma.encrypt("hello world", "02715")
+  end
+
 end
