@@ -13,4 +13,12 @@ class Enigma
     hash
   end
 
+  def xcryption(xcryption, message, key, date)
+    hash = Hash.new
+    hash[xcryption] = message
+    hash[:key] = key
+    hash[:date] = date
+    hash
+  end
+
 end
