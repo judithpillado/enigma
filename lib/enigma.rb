@@ -21,4 +21,29 @@ class Enigma
     hash
   end
 
+  def encrypt(message, key, date = Time.now.strftime("%d%m%y"))
+    keys = Key.new(key)
+    offsets = Offset.new(date)
+    shift = shifts(keys, offsets)
+    letters = message.downcase.chars
+    encoded_message = []
+    letters.each_with_index do |letter, index|
+      initial_index = @alphabet.index(letter)
+      if index % 4 == 0
+        shifted_alphabet = @alphabet.rotate(shift[:A])
+        encoded_message << shifted_alphabet[initial_index]
+      elsif index % 4 == 1
+        shifted_alphabet = @alphabet.rotate(shift[:B])
+        encoded_message << shifted_alphabet[initial_index]
+      elsif index % 4 == 2
+        shifted_alphabet = @alphabet.rotate(shift[:C])
+        encoded_message << shifted_alphabet[initial_index]
+      elsif index % 4 == 3
+        shifted_alphabet = @alphabet.rotate(shift[:D])
+        encoded_message << shifted_alphabet[initial_index]
+      end
+    end
+    xcryption(:encryption, encoded_message.join, key, date)
+  end
+
 end
