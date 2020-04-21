@@ -1,8 +1,8 @@
 class Key
   attr_reader :input
 
-  def initialize
-    @input = randomize_numbers
+  def initialize(input = randomize_numbers)
+    @input = input 
   end
 
   def randomize_numbers
